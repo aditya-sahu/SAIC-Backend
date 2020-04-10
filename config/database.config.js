@@ -1,1 +1,1 @@
-exports.url = process.env.MONGOLAB_URI;
+exports.url = process.env.MONGODB_URI;
