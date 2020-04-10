@@ -1,1 +1,1 @@
-exports.url = "mongodb+srv://corona:corona@cluster0-lly2m.mongodb.net/test?retryWrites=true&w=majority";
+exports.url = process.env.MONGOLAB_URI;
