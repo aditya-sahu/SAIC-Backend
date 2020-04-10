@@ -1,0 +1,23 @@
+{
+  "name": "saic-backend",
+  "version": "1.0.0",
+  "description": "services for smart ai classroom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aditya-sahu/SAIC-Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aditya-sahu/SAIC-Backend/issues"
+  },
+  "homepage": "https://github.com/aditya-sahu/SAIC-Backend#readme",
+  "dependencies": {
+    "mongoose": "^5.9.7",
+    "nodemon": "^2.0.3"
+  }
+}
