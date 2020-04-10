@@ -39,6 +39,6 @@ app.get('/', (req, res) => {
 });
 
 // listen for requests
-app.listen(8080, () => {
+app.listen(process.env.PORT, () => {
     console.log("\x1b[33m%s\x1b[0m","Server is listening on port 8080");
 });
