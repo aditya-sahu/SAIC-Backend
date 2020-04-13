@@ -39,8 +39,8 @@ exports.create = (req, res) => {
 
 
 
-// Update exsiting student's activity
-exports.update = (req, res) => {
+// Update exsiting student's head activity
+exports.updateHeadActivity = (req, res) => {
     console.log(req.body);
     const _name = req.body.name;
     Student.findOne({"name":_name})
@@ -57,6 +57,43 @@ exports.update = (req, res) => {
         Student.updateOne(
             {"name": _name},
             {$push: {"headActivity": {angle:_angle,ts:_dateTimeNow}}}
+        )
+        .then(data => {
+            if(!data ) {
+                return res.status(404).send({
+                    status:404,
+                    message: "No data found. "
+                });            
+            }
+            res.send(data);
+        }).catch(err => {
+            return res.status(500).send({
+                status:500,
+                message: err.message || "Error updating data with given parameters"
+            });
+        })
+    })
+};
+
+
+// Update exsiting student's presence activity
+exports.updateHeadActivity = (req, res) => {
+    console.log(req.body);
+    const _name = req.body.name;
+    Student.findOne({"name":_name})
+    .then(student => {
+        if(!student) {
+            return res.status(400).send({
+                status:400,
+                message: "Student not found."
+            });
+        }
+        // Update activityData of the user
+        const _angle = req.body.headActivity.angle;
+        const _dateTimeNow = Date.now();
+        Student.updateOne(
+            {"name": _name},
+            {$push: {"presenceActivity": {present:_angle,ts:_dateTimeNow}}}
         )
         .then(data => {
             if(!data ) {

@@ -6,8 +6,11 @@ module.exports = (app) => {
     // Create a new Student
     app.post('/students/addStudent', studentCreate.create);
 
-    // Update existing Student activity
-    app.post('/students/updateStudent', studentCreate.update);
+    // Update existing Student Head activity
+    app.post('/students/updateHeadActivity', studentCreate.updateHeadActivity);
+
+    // Update existing Student Presence activity
+    app.post('/students/updatePresenceActivity', studentCreate.updatePresenceActivity);
 
     // Retrieve all students
     app.get('/students/getStudents', studentSearch.findAll);
