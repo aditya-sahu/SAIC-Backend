@@ -15,9 +15,9 @@ exports.create = (req, res) => {
     // Create a new Student
     const student = new Student({
         name: req.body.name,
-        headActivity: req.body.headActivity || "NA",
-        presenceActivity: req.body.presenceActivity || "NA",
-        emotionActivity: req.body.emotionActivity || "NA"
+        headActivity: req.body.headActivity,
+        presenceActivity: req.body.presenceActivity,
+        emotionActivity: req.body.emotionActivity
     });
 
     // Save Student into the database
