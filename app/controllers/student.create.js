@@ -77,7 +77,7 @@ exports.updateHeadActivity = (req, res) => {
 
 
 // Update exsiting student's presence activity
-exports.updateHeadActivity = (req, res) => {
+exports.updatePresenceActivity = (req, res) => {
     console.log(req.body);
     const _name = req.body.name;
     Student.findOne({"name":_name})
@@ -89,7 +89,7 @@ exports.updateHeadActivity = (req, res) => {
             });
         }
         // Update activityData of the user
-        const _angle = req.body.headActivity.angle;
+        const _angle = req.body.presenceActivity.angle;
         const _dateTimeNow = Date.now();
         Student.updateOne(
             {"name": _name},
