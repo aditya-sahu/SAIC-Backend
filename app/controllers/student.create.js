@@ -89,11 +89,11 @@ exports.updatePresenceActivity = (req, res) => {
             });
         }
         // Update activityData of the user
-        const _angle = req.body.presenceActivity.angle;
+        const _present = req.body.presenceActivity.present;
         const _dateTimeNow = Date.now();
         Student.updateOne(
             {"name": _name},
-            {$push: {"presenceActivity": {present:_angle,ts:_dateTimeNow}}}
+            {$push: {"presenceActivity": {present:_present,ts:_dateTimeNow}}}
         )
         .then(data => {
             if(!data ) {
