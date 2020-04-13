@@ -36,13 +36,16 @@ const StudentSchema = mongoose.Schema({
        required: true
     },
     headActivity: {
-        type:[headAngleData]
+        type:[headAngleData],
+        required: false
     },
     presenceActivity: {
-        type:[presenceData]
+        type:[presenceData],
+        required: false
     },
     emotionActivity: {
-        type:[emotionData]
+        type:[emotionData],
+        required: false
     }
 });
 

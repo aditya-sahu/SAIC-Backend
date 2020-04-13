@@ -17,25 +17,25 @@ exports.findAll = (req, res) => {
     });
 };
 
-// // Find a single user -> Body must have a uid
-// exports.findByuid = (req, res) => {
-//     User.findOne({"uid":req.params.uid})
-//     .then(user => {
-//         if(!user) {
-//             return res.status(404).send({
-//                 status: 404,
-//                 message: "User not found with id " + req.params.uid
-//             });            
-//         }
-//         res.send({
-//             status:200,
-//             data:user,
-//             message: "User retrieved successfully"
-//         });
-//     }).catch(err => {
-//         return res.status(500).send({
-//             status:500,
-//             message: err.message || "Error retrieving user with id " + req.params.uid 
-//         });
-//     });
-// };
+//Find a single student -> Body must have a uid
+exports.findById = (req, res) => {
+    User.findOne({"_id":req.params._id})
+    .then(user => {
+        if(!user) {
+            return res.status(404).send({
+                status: 404,
+                message: "User not found with id " + req.params._id
+            });            
+        }
+        res.send({
+            status:200,
+            data:user,
+            message: "User retrieved successfully"
+        });
+    }).catch(err => {
+        return res.status(500).send({
+            status:500,
+            message: err.message || "Error retrieving user with id " + req.params.uid 
+        });
+    });
+};
